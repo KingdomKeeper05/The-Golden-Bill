@@ -1,3 +1,10 @@
+#ai-container {
+    background-color: #cdcdcd; /* Replace with your desired hex color */
+    border-radius: 10px; /* Rounded rectangle edges */
+    padding: 20px; /* Optional: Add some padding */
+    margin: 10px 0; /* Optional: Add some margin */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -54,3 +61,4 @@ footer {
     margin: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
