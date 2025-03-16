@@ -1,28 +1,11 @@
 {
-  "name": "the-golden-bill",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KingdomKeeper05/The-Golden-Bill.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KingdomKeeper05/The-Golden-Bill/issues"
-  },
-  "homepage": "https://github.com/KingdomKeeper05/The-Golden-Bill#readme",
-  "description": "",
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "bootstrap": "^5.3.3",
+    "aws-sdk": "^2.1692.0",
+    "aws-serverless-express": "^3.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongodb": "^6.14.2",
     "mongoose": "^8.12.1",
-    "nodemon": "^3.1.9",
-    "path": "^0.12.7"
+    "web3": "^4.16.0"
   }
 }
