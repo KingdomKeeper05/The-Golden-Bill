@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items List</title>
+</head>
+<body>
+    <h1>Items List</h1>
+    <table id="itemsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch data from the Flask API
+        fetch('http://127.0.0.1:5000/api/items')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+        fetch('http://127.0.0.1:5000/api/items')  // Adjust this URL to match your Flask API
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Log the data for verification
+                const tableBody = document.querySelector('#itemsTable tbody');
+
+                // Clear table before adding new rows (if necessary)
+                tableBody.innerHTML = '';
+
+                // Add rows to the table
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td>${item.name}</td><td>${item.price}</td>`;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+    <script src="scripts/server.js"></script>
+</body>
+</html>

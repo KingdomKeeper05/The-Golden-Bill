@@ -4,48 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Wellness App</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="scss/styles.css">
 </head>
 <body>
-    
-    <form id="budgetForm" class="container">
-        <h2>Information</h2>
-        
-        <label for="salary">Salary ($):</label>
-        <input type="number" id="salary" name="salary" required>
-        <br>
-    
-        <h2>Budget Goals</h2>
-    
-        <label for="savingsGoal">Savings Goal ($):</label>
-        <input type="number" id="savingsGoal" name="savingsGoal" required>
-        <br>
-        <label for="diningBudget">Savings Budget ($):</label>
-        <input type="number" id="savingsBudget" name="savingsBudget">
-        <br>
-        <label for="diningBudget">Shopping Budget ($):</label>
-        <input type="number" id="shoppingBudget" name="shoppingBudget">
-        <br>
-        
-        <button type="submit">Save Budget</button>
-    </form>
-    </div>
-
-    <main class="container">
-        <section id="introduction">
-            <h2>Summary</h2>
-            
-            <div id="ai-container" class="container">
-                <p>Insert AI prompt here</p>
+    <div class="ombre-v3 shadow">
+        <nav class="navbar navbar-expand-lg p-3 ombre shadow border border-dark ">
+            <div class="container-fluid">
+                <a class="grey" href="./learn.html">LEARN</a>
+                    
+                <a class="grey" href="./analyze.html">ANALYZE</a>
+                
+                <a class="grey" href="./index.html">DASHBOARD</a>
+                
+                <a class="grey" href="./wishlist.html">WISHLIST</a>
+                
+                <a class="grey" href="./financial.html">FINANCIAL ADVISOR</a>
             </div>
-        </section>
-        
-    </main>
+        </nav>
     
-    <footer>
-        <p>&copy; 2023 Financial Wellness App. All rights reserved.</p>
+        <div class="container-fluid p-4">
+            <div class="p-2 shadow rounded-4">
+                <h2 class="mt-1 text-center">Budgeting</h2>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="budgetForm" action="/post-budget" method="post" class="container-fluid ombre-v2 p-4 rounded-4 shadow mb-4">
+                        <!-- SALARY -->
+                        <label for="salary">Salary</label>
+                        <input class="d-flex" type="number" id="salary" name="salary" required>
+                        <br>
+                        <br>
+                        <!-- SAVINGS GOAL -->
+                        <label for="savingsGoal">Savings Goal</label>
+                        <input class="d-flex" type="number" id="savingsGoal" name="savingsGoal" required>
+                        <br>
+                        <br>
+                        <!-- SAVINGS BUDGET -->
+                        <label for="savingsBudget">Savings Budget</label>
+                        <input class="d-flex" type="number" id="savingsBudget" name="savingsBudget">
+                        <br>
+                        <br>
+                        <!-- DINING BUDGET -->
+                        <label for="shoppingBudget">Shopping Budget</label>
+                        <input class="d-flex" type="number" id="shoppingBudget" name="shoppingBudget">
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-light">Save Budget</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 shadow rounded-4">
+                        <h4 class="text-center ">Information</h4>
+                    </div>
+                    <p id="budgetInfo" class="p-2"></p>
+                </div>
+            </div>
+            
+            <div class="p-2 shadow rounded-4">
+                <h2 class="mt-1 text-center">Transactions</h2>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="transactionForm" action="/post-transaction" method="post" class="ombre-v2 container-fluid mt- container-fluid bg-primary p-4 mb-4 rounded-4 shadow">
+                        <label for="itemDesc">Transaction</label>
+                        <input class="d-flex"type="text" id="itemDesc" name="itemDesc" required>
+                        <br>
+                        <br>
+
+                        
+            
+                        <label for="category">Category</label>
+                        <input class="d-flex" type="text" id="category" name="category" required>
+                        <br>
+                        <br>
+                        <label for="amount">Amount</label>
+                        <input class="d-flex" type="number" id="amount" name="amount" required>
+                        <br>
+                        <br>
+                        <label for="date">Date</label>
+                        <input class="d-flex" type="date" id="date" name="date" required>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-light">Save Transaction</button>
+                    
+                        <p class="mt-4 text-center">blockchain secured :]</p>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-2 shadow rounded-4">
+                        <h4 class="text-center ">Information</h4>
+                    </div>
+                    
+                    <p id="transactionInfo" class="p-2"></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>   
+    
+    <footer class="container-fluid btn-light p-4 border border-dark">
+        <p>&copy; 2023 The Golden Bill. All rights reserved.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/info-popup.js"></script>
+    <script src="scripts/ombre.js"></script>
 </body>
 </html>
